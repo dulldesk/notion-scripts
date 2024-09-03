@@ -13,3 +13,5 @@ Notion scripts for setting up a database calendar for my courses.
 	- go to a database, copy link; `https://www.notion.so/<username>/<database_id>?v=<view_id..?>`
 - `DATABASE_ID_COPY`
 *(see [.env.example](./.env.example))*
+
+Enable the automation workflow's access to the database via the "Connections" / "Connect to" menu option.

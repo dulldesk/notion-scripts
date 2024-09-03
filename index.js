@@ -1,5 +1,6 @@
 require('dotenv').config()
 const { Client } = require("@notionhq/client")
+const { DATA, TAG_COLORS } = require('./data')
 
 const notion = new Client({
   auth: process.env.NOTION_TOKEN,
@@ -7,48 +8,6 @@ const notion = new Client({
 
 const LINE_UP = '\x1b[1A'
 const LINE_CLEAR = '\x1b[2K'
-
-const TAG_COLORS = {
-	cs251: "red"
-}
-// blue
-// brown
-// default
-// gray
-// green
-// orange
-// pink
-// purple
-// red
-// yellow
-
-// gen.py to generate
-const DATA = {
-	cs251: [
-		// ['A1', '2024-01-19'],
-		// ['A2', '2024-02-02'],
-		// ['A3', '2024-02-09'],
-		// ['A4', '2024-03-01'],
-		// ['A5', '2024-03-15'],
-		// ['A6', '2024-03-29'],
-		// ['A7', '2024-04-05'],
-		//
-		// ['T1', '2024-01-10'],
-		// ['T2', '2024-01-17'],
-		// ['T3', '2024-01-24'],
-		// ['T4', '2024-01-31'],
-		// ['T5', '2024-02-07'],
-		// ['T6', '2024-02-14'],
-		// ['T7', '2024-02-28'],
-		// ['T8', '2024-03-06'],
-		// ['T9', '2024-03-13'],
-		// ['T10', '2024-03-20'],
-		// ['T11', '2024-03-27'],
-		// ['T12', '2024-04-03'],
-		// ['Midterm', '2024-02-15T16:30:00-05:00','2024-02-15T18:20:00-05:00'],
-		// ['Exam', '2024-04-23T09:00:00-04:00','2024-04-23T11:30:00-04:00'],
-	],
-}
 
 const ICONS = {
 	'Midterm': '📑',
