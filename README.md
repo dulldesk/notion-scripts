@@ -2,10 +2,11 @@
 
 Notion scripts for setting up a database calendar for my courses.
 
-- [`index.js`](./index.js) : creates pages from a json
-- [`copy.js`](./copy.js) : duplicates pages from one database to another, with an optional filter
+- [`index.js`](./index.js) : creates pages from a json-like object
+- [`copy.js`](./copy.js) : duplicates pages from one database to another
 	- `DATABASE_ID` source database
 	- `DATABASE_ID_COPY` destination database
+	- filters for page.date > now
 
 .env file *(see [.env.example](./.env.example))*:
 - `NOTION_TOKEN` notion api token ([docs](https://developers.notion.com/docs/authorization))
