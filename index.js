@@ -19,9 +19,11 @@ const ICONS = {
 }
 function getIcon(n) {
 	n = n.toLowerCase();
-	if (n.startsWith("TT") || n.startsWith("Test") || n.includes("Exam")) return ICONS.Test;
-	if (n.startsWith("Quiz") || (n[0] === 'Q' && !isNaN(n[1]))) return ICONS.Quiz;
+	if (n.includes("exam")) return ICONS.Exam;
+	if (n.startsWith("tt") || n.startsWith("test")) return ICONS.Test;
+	if (/q(uiz)?\s*\d*/.test(n)) return ICONS.Quiz;
 	if (n.startsWith("read")) return ICONS.Read;
+	if (n.endsWith("work")) return ICONS.Read;
 
 	return ICONS.default;
 }
@@ -38,7 +40,7 @@ async function create(title, start, course, end) {
 		// },
 		"icon": {
 			"type": "emoji",
-			"emoji": ICONS[title] || getIcon(title),
+			"emoji": ICONS[title.replace(/\s+\d+/, '')] || getIcon(title),
 		},
 		"parent": {
 			"type": "database_id",
